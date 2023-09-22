@@ -1,0 +1,28 @@
+
+.restraunt-menu-page{
+    display: flex;
+    flex-direction: row;
+    
+    background-color: #f5f5f5;
+}
+.details{
+    border: 5px solid rgb(68, 56, 56);
+}
+.details img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    padding: 5px 5px 5px 5px;
+}
+.menuall{
+    width: 400px;
+}
+
+.menuItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
