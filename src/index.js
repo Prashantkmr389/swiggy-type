@@ -7,13 +7,17 @@ import App from './app';
 import BodyComponent from "./components/BodyComponent";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import About from "./components/About";
-import Contact from "./components/Contact";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantsMenu from "./components/RestaurantsMenu";
 import Profile from "./components/Profile";
+import { lazy, Suspense } from 'react';
 
-
+const Instamart = lazy(() => import('./components/Instamart'));
+const About = lazy(() => import('./components/About'));
+const Contact = lazy(() => import('./components/Contact')); // lazy loading
+// import Instamart from './components/Instamart';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>About Page is loading</h1>}>
+            <About />
+          </Suspense>
+        ),
         children: [
           {
             path: "profile",
@@ -36,11 +44,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<h1>Contact Page is loading</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:id",
         element: <RestaurantsMenu />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<h1>This is loading...</h1>}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

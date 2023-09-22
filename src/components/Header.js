@@ -11,6 +11,7 @@ const Header = () => (
       
       <h3><Link to={'/about'}>About</Link></h3>
       <h3><Link to={'/contact'}>Contact</Link></h3>
+      <h3><Link to={'/instamart'}>Instamart</Link></h3>
       <h3>Cart</h3>
     </div>
     {/* this is header */}
