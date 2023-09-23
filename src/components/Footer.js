@@ -1,6 +1,6 @@
 const Footer = () => (
-  <div>
-    <h1>Footer Component</h1>
+  <div className=" bg-gray-800 text-white py-4 text-center">
+    <h1>Created by Prashant with ❤️</h1>
   </div>
 );
 

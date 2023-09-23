@@ -8,10 +8,10 @@ const ImageCard = ({
   cuisines,
 }) => {
   return (
-    <div className="imagecard">
-      <img src={IMG_CON_URL + cloudinaryImageId} alt="fljslfj" />
+    <div className="h-72 shadow-md w-72 border-2 m-1 hover:scale-105 rounded-md p-3">
+      <img className="h-24 w-24 rounded-sm" src={IMG_CON_URL + cloudinaryImageId} alt="fljslfj" />
 
-      <h3>{name}</h3>
+      <h3 className="text-lg font-semibold">{name}</h3>
 
       <h4>Avg rating = {avgRating}</h4>
       {/* <h4>Cost for two = {restuarants[0].info.costForTwo}</h4> */}

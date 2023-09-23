@@ -13,19 +13,18 @@ const BodyComponent = () => {
       <Shimmer />
     ) : (
       <>
-        <div className="searchInput">
+        <div className="h-10 m-2">
           <input
             type="text"
             name=""
             id=""
+            className="shadow-md hover:scale-110 border-2 border-sky-300 rounded-md w-1/3 h-10 mx-5"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
-        </div>
-        <div className="searchBtn">
-          <button
+          <button className="bg-sky-300 hover:bg-sky-400 text-white font-bold py-2 px-4 rounded"
             onClick={() => {
               const data = filterResturant(restuarantList, searchText);
               setResturants(data);
@@ -34,17 +33,19 @@ const BodyComponent = () => {
             Search
           </button>
         </div>
-        <div className="restuarant">
-            {
-              restuarants.length === 0 ? <h1>No Restuarant Found</h1> :
-                restuarants.map((restuarant) => (
-                  <Link to={"/restaurant/"+restuarant.info.id} key={restuarant.info.id}>
-                  <ImageCard {...restuarant.info}  />
-                  </Link>
-                ))
-                
-            }
-          
+        <div className="flex flex-wrap justify-center">
+          {restuarants.length === 0 ? (
+            <h1>No Restuarant Found</h1>
+          ) : (
+            restuarants.map((restuarant) => (
+              <Link
+                to={"/restaurant/" + restuarant.info.id}
+                key={restuarant.info.id}
+              >
+                <ImageCard {...restuarant.info} />
+              </Link>
+            ))
+          )}
         </div>
       </>
     );

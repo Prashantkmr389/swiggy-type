@@ -1,8 +1,3 @@
-import './App.css';
-
-
-
-
 import Header from "./components/Header"
 import Footer from "./components/Footer";
 import { Outlet } from 'react-router-dom';
@@ -14,12 +9,15 @@ const App = () => {
     return <h1>you are offline</h1>
   }
   return (
-    <>
-      <Header />
-      <Outlet/>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <Header />
+        <Outlet />
+      </div>
+
       <Footer />
-    </>
-  )
+    </div>
+  );
 }
 
 
