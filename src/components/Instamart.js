@@ -26,7 +26,7 @@ const Section = ({title, desc, show, setShow})=>{
 }
 
 const Instamart = () => {
-    const [sectionvis, setSectionVis] = useState("about");
+    const [sectionvis, setSectionVis] = useState("none");
     return (
       <div>
         <Section
