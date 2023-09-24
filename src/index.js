@@ -6,23 +6,21 @@ import App from './app';
 
 import BodyComponent from "./components/BodyComponent";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-// import About from "./components/About";
-// import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantsMenu from "./components/RestaurantsMenu";
 import Profile from "./components/Profile";
 import { lazy, Suspense } from 'react';
 import Processing from './cards/Processing';
+import Cart from './components/Cart';
 const Instamart = lazy(() => import('./components/Instamart'));
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact')); // lazy loading
-// import Instamart from './components/Instamart';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
@@ -61,6 +59,12 @@ const router = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path:"/cart",
+        element:(
+          <Cart />
+        )
       },
     ],
   },

@@ -5,7 +5,7 @@ const useRestraunt = (resId) =>{
     const [info, setInfo] = useState([]);
     const [recommended, setRecommended] = useState([]);
     useEffect(() => {
-        console.log('Ha bhaiiyaa yha aa gaye')
+        // console.log('Ha bhaiiyaa yha aa gaye')
         getRestauranMenu();
     }, []);
 
@@ -16,7 +16,7 @@ const useRestraunt = (resId) =>{
         );
 
         const response = await data.json();
-        console.log(response);
+        // console.log(response);
         const alldetails = response?.data?.cards;
         const restdetails = alldetails[0];
         const menudetails = alldetails[2];

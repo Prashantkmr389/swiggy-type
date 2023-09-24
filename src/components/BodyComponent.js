@@ -9,6 +9,7 @@ const BodyComponent = () => {
     const [restuarantList, restuarants, setResturants] =
       useRestrauntList();
     const [searchText, setSearchText] = useState("");
+   
     return restuarantList.length === 0 ? (
       <Shimmer />
     ) : (
@@ -32,6 +33,7 @@ const BodyComponent = () => {
           >
             Search
           </button>
+          
         </div>
         <div className="flex flex-wrap justify-center">
           {restuarants.length === 0 ? (

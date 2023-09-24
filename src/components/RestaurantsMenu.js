@@ -32,6 +32,7 @@ const RestaurantsMenu = () => {
               <MenuCard
                 name={item?.card?.info?.name}
                 imageId={item?.card?.info?.imageId}
+                id={item?.card?.info?.id}
                 key={item?.card?.info?.id}
               />
             );
