@@ -5,7 +5,7 @@ const useRestraunt = (resId) =>{
     const [info, setInfo] = useState([]);
     const [recommended, setRecommended] = useState([]);
     useEffect(() => {
-        // console.log('Ha bhaiiyaa yha aa gaye')
+        console.log('Ha bhaiiyaa yha aa gaye')
         getRestauranMenu();
     }, []);
 

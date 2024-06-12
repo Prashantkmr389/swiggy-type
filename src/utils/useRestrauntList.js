@@ -15,7 +15,7 @@ const useRestrauntList = () => {
       console.log(response);
       
       const t =
-        response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
       console.log(t)
       setRestuarantList(t);
